@@ -1,0 +1,268 @@
+$color-btn:#4ED687;
+$color-title:#2A363D;
+$color-text:#2A363D;
+$color-primary:#FFFFFF;
+$color-secondary:#526C79;
+$color-btn2:#FEC149;
+$color-pink:#EF3F61;
+$color-blue:#5C94FE;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(../font/Proxima_Nova_Font.otf);
+ }
+
+ html{
+     font-family: Proxima Nova;
+     font-size: 16px;
+ }
+
+ .container{
+     max-width: 1440px;
+     margin: 0 auto;
+     padding: 20px 40px;
+ }
+
+ .title{
+    color: $color-title;
+     &--hero{
+         color: $color-title;
+         font-size: 2.5rem;
+     }
+     &--card{
+         
+         font-size: 1rem;
+     }
+
+     &--secondary{
+         text-align: center;
+         font-size: 2rem;
+         line-height: 1.2;
+     }
+ }
+
+ .text{
+     &--primary{
+         color: $color-text;
+         font-size: 1.2rem;
+         font-weight: normal;
+         line-height: 1.2;
+     }
+     &--sub,&--card{
+         color: $color-secondary;
+         font-size: 14px;
+     }
+ }
+
+ .image{
+     width: 100%;
+     object-fit: cover;
+ }
+
+
+ 
+.btn{
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;  
+    text-transform: uppercase;
+    
+   
+    
+        &--primary{
+            background-color: $color-btn;
+            border: 1px solid $color-btn;
+            color: $color-primary;
+            transition: all .2s ease-in-out;
+            border-radius: 6px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            font-size: 14px;
+    
+            &:hover{
+                background-color: transparent;
+                color: $color-title;
+            }
+        }
+
+        &--yellow, &--pink{
+            color: $color-primary;
+            font-size: 12px;
+            border-radius: 20px;
+        }
+        &--yellow{
+            background-color: $color-btn2;
+        }
+        &--pink{
+            background-color: $color-pink;
+        }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+
+    &__header{
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+    }
+    &__img{
+        object-fit: contain;
+        width: 100%;
+
+        &--s{
+            opacity: 0.3;
+            margin-top: -20px;
+        }
+    }
+
+    &--sm{
+        margin-top: 50px;
+    }
+
+  
+}
+     
+
+.header{
+
+    background-image: url(../image/background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    //height: 80vh;   
+    object-fit: cover;
+    position: relative;
+     
+
+    &__wrap{
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    &__button{
+       
+        @media screen and (max-width: 768px){
+        display: none; 
+        }    
+    }
+
+
+    &__hero{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        column-gap: 50px;
+        width: 100%;
+
+        @media screen and (max-width: 768px){
+            display: flex;
+            flex-direction: column;
+        }
+        
+    }
+
+    &__col-1{
+        padding-right:  40px; 
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    &__col-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        box-shadow: 1px solid black ;
+        background-color: $color-primary;
+        box-shadow: 0px 5px 10px -7px rgba(122, 122, 122, 0.466);
+        padding: 20px;
+        
+    }
+
+    &__end{
+        margin-top: 30px;
+    }
+
+    &__link{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+
+       
+        @media screen and (max-width: 768px){
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            width: 100%;
+        }
+
+        &--btn{
+            display: none;
+            background-color: $color-btn;
+
+            @media screen and (max-width: 768px){
+                display: inline-block;
+                
+            }
+        }
+        
+
+        &--item{
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            flex-wrap: wrap;
+        }
+    }
+
+   
+}
+
+
+.purchase{
+    
+    margin-top: 30px;
+
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        background-image: url(../image/bg2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;    
+        object-fit: cover;
+        position: relative;
+               
+        
+    }
+
+    &__card{
+       display: flex;
+       justify-content: center;
+       width: 100%;
+       flex-wrap: wrap;
+    }
+   
+}
