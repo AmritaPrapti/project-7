@@ -31,18 +31,22 @@ $color-blue:#5C94FE;
  .title{
     color: $color-title;
      &--hero{
-         color: $color-title;
          font-size: 2.5rem;
      }
-     &--card{
-         
-         font-size: 1rem;
+     &--card{         
+         font-size: 1.3rem;        
      }
 
      &--secondary{
          text-align: center;
          font-size: 2rem;
          line-height: 1.2;
+         margin-bottom: 10px;
+     }
+     &--sub{
+        text-align: center;
+         font-size: 1rem; 
+         font-weight: normal;
      }
  }
 
@@ -62,6 +66,8 @@ $color-blue:#5C94FE;
  .image{
      width: 100%;
      object-fit: cover;
+
+    
  }
 
 
@@ -73,11 +79,11 @@ $color-blue:#5C94FE;
     text-decoration: none;
     display: inline-block;  
     text-transform: uppercase;
-    
-   
+    cursor: pointer;
     
         &--primary{
             background-color: $color-btn;
+           
             border: 1px solid $color-btn;
             color: $color-primary;
             transition: all .2s ease-in-out;
@@ -91,12 +97,29 @@ $color-blue:#5C94FE;
                 background-color: transparent;
                 color: $color-title;
             }
+          }
+        &--secondary{
+            background-color: red;
+            background-image:
+                linear-gradient(
+                to right bottom, 
+                red, #f06d06
+                                );
+            border-radius: 6px;
+            font-weight: 200;
+            
+            color:$color-primary;
+            font-size: 14px;
+            padding: 15px 10px;
         }
+        
 
-        &--yellow, &--pink{
+        &--yellow, &--pink,&--blue,&--green {
             color: $color-primary;
             font-size: 12px;
             border-radius: 20px;
+            padding: 10px 15px;
+
         }
         &--yellow{
             background-color: $color-btn2;
@@ -104,9 +127,23 @@ $color-blue:#5C94FE;
         &--pink{
             background-color: $color-pink;
         }
+        &--blue{
+            background-color: $color-blue;      
+        }
+        &--green{
+            background-color: $color-btn; 
+        }
+        &--blue-s{
+            color: $color-primary;
+            font-size: 12px;
+            border: none; 
+            padding: 5px 10px;
+            background-color: $color-blue;
+        }
 }
 
 .card{
+
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -130,8 +167,39 @@ $color-blue:#5C94FE;
     &--sm{
         margin-top: 50px;
     }
+    &__follower{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-  
+        &--left{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        }
+    }
+    &--join{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+    &--sub{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    &__pro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        padding: 20px 30px;
+        box-shadow: -2px 5px 15px 2px rgba(122, 122, 122, 0.366);
+    }
+ 
 }
      
 
@@ -156,8 +224,8 @@ $color-blue:#5C94FE;
     &__main{
         display: flex;
         justify-content: space-between;
-
     }
+
     &__button{
        
         @media screen and (max-width: 768px){
@@ -253,8 +321,7 @@ $color-blue:#5C94FE;
         background-size: cover;
         width: 100%;    
         object-fit: cover;
-        position: relative;
-               
+        position: relative;           
         
     }
 
@@ -265,4 +332,111 @@ $color-blue:#5C94FE;
        flex-wrap: wrap;
     }
    
+}
+
+.follower{
+    &__wrap{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-top: 40px;
+        column-gap: 40px;
+        width: 100%;
+        justify-content: space-between;
+
+        @media screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        
+        &--col{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            row-gap: 10px;
+           flex-wrap: wrap;
+           
+        }
+    }
+    &__gallery{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        row-gap: 10px;
+    }
+
+    &__title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        padding: 10px 20px;
+    }
+}
+
+.join{
+
+   
+    background-image: url(../image/body.svg);
+    width: 100%;
+    background-position: center;
+    background-size: 100% ;
+    background-repeat: no-repeat;    
+    object-fit: contain;
+    
+    &__wrap{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        row-gap: 20px;
+        justify-content: space-between; 
+        padding-top: 60px;
+
+        @media screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+        }
+        
+   
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        background-image: url(../image/Ellipse-j.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+    }
+ 
+    &__video{
+        padding:0 20px;
+    }
+    &__img{
+        height: 400px;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.profile{
+    margin-top: 20px;
+    &__wrap{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: space-between;
+        grid-gap: 30px;
+        margin-top: 30px;
+
+        @media screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+        }
+    }
 }
