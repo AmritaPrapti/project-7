@@ -48,6 +48,11 @@ $color-blue:#5C94FE;
          font-size: 1rem; 
          font-weight: normal;
      }
+     &--table{
+     
+        font-size: 1rem;
+        
+    }
  }
 
  .text{
@@ -60,6 +65,23 @@ $color-blue:#5C94FE;
      &--sub,&--card{
          color: $color-secondary;
          font-size: 14px;
+     }
+     &--table{
+         color: $color-text;
+         font-size: 1rem;
+         //text-align: center;
+     }
+     &--btns{
+         font-size: 10px;
+         text-transform: none;
+         
+     }
+     &--btns-up{
+         display: flex;
+         align-items: center;
+     }
+     &--data{
+         padding-left: 30px;
      }
  }
 
@@ -107,10 +129,10 @@ $color-blue:#5C94FE;
                                 );
             border-radius: 6px;
             font-weight: 200;
-            
             color:$color-primary;
             font-size: 14px;
-            padding: 15px 10px;
+            padding: 10px 20px;
+            line-height: 1.2;
         }
         
 
@@ -140,6 +162,57 @@ $color-blue:#5C94FE;
             padding: 5px 10px;
             background-color: $color-blue;
         }
+        &__table{
+            display: flex;
+            flex-direction: column;
+            background-color: $color-blue;
+            color: $color-primary;
+            align-items: center;
+            border-radius: 30px;
+            padding: 10px 30px;
+            position: relative;
+
+            span{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            &--orng{
+                background-color: red;
+                background-image:
+                linear-gradient(
+                to right bottom, 
+                red, #f06d06
+                                );
+            }
+               
+        }
+        &--ab{
+            display: flex; 
+            background-color: #FEC149;
+            color: $color-primary;
+            align-items: center;
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid $color-primary;
+            left: 80px;
+            top: -15px;
+            padding: 15px 10px;
+            text-decoration-line: line-through; 
+        }
+
+        &--white{
+            background-color: $color-primary;
+            box-shadow: 2px 3px 12px 1px rgba(122, 122, 122, 0.366);
+        }
+}
+.link{
+    &--btn{
+        text-decoration: none;
+        position: relative;
+    }
+    &--table{
+        color: #5C94FE;
+    }
 }
 
 .card{
@@ -198,6 +271,36 @@ $color-blue:#5C94FE;
         row-gap: 10px;
         padding: 20px 30px;
         box-shadow: -2px 5px 15px 2px rgba(122, 122, 122, 0.366);
+    }
+    
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-primary;
+        padding: 20px;
+        align-items: flex-start;
+        box-shadow: -2px 5px 15px 2px rgba(122, 122, 122, 0.366);
+        &--mid{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+        &--left{
+            display: flex;
+            column-gap: 10px;
+            align-items: flex-start;
+           
+        }
+        &--dif{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px; 
+            justify-content: center;
+            text-align: center;
+        }
+      
     }
  
 }
@@ -414,6 +517,10 @@ $color-blue:#5C94FE;
         flex-direction: column;
         row-gap: 30px;
 
+        @media screen and (max-width: 768px){
+            align-items: center;
+        }
+
     }
  
     &__video{
@@ -437,6 +544,136 @@ $color-blue:#5C94FE;
 
         @media screen and (max-width: 768px){
             grid-template-columns: 1fr;
+        }
+    }
+}
+
+.growth{
+    margin-top: 20px;
+
+    &__wrap{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 30px;
+        column-gap: 30px;
+
+        @media screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+            margin: 30px 0px;
+        }
+    }
+    &__main{
+        box-shadow: 2px 3px 12px 1px rgba(122, 122, 122, 0.366);
+    }
+    &__sidebar{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 30px;
+        align-items: center;
+        row-gap: 30px;
+        box-shadow: 2px 3px 12px 1px rgba(122, 122, 122, 0.366);
+
+        &--img{
+            width: 50px;
+            height: 50px;
+        }
+
+        &--item{
+            display: flex;
+            justify-content: space-between;
+            
+            width: 100%;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #F6FAFF;
+            text-decoration: none;
+        }
+    }
+
+    &__table{
+        width: 100%;
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: column; 
+            
+
+        &--row{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            justify-content: center;
+            padding: 20px ;
+            width: 100%;
+            align-items: center;
+            column-gap: 20px;
+            
+            align-content: center;
+           
+        }
+        &--row:nth-child(even) {
+            background-color: #F6FAFF;
+        }
+        &--header{
+            display: flex;
+            flex-direction: column; 
+            row-gap: 10px;
+            
+        }
+        &--item{
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+           
+        }
+    }
+
+}
+
+.footer{
+    
+    background-image: url(../image/body.svg);
+    width: 100%;
+    background-position: center;
+    background-size: 100% ;
+    background-repeat: no-repeat;    
+    object-fit: contain;
+
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    &__head{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        //padding: 40px;
+        row-gap: 20px;
+    }
+    &__card{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+        column-gap: 20px;
+        justify-content: center;
+
+        @media screen and (max-width: 768px){
+            grid-template-columns: 1fr;
+            margin: 30px 0px;
+        }
+
+        &--col-1, &--col-2{
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+        &--col-2{
+            padding: 30px 0;
         }
     }
 }
